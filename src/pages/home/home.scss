@@ -1,0 +1,51 @@
+page-home {
+    ul {
+    padding: 0px;
+
+        &.rating li {
+            padding: 0px 3px !important;
+            background: none;
+            color: #ffb400;
+
+            ion-icon {
+            font-size: 25px;
+            }
+        }
+    }
+    .margin{
+        margin-bottom:10px;
+    }
+    .icon{
+        font-size: 50px;
+    }
+    .info{
+        font-size: 20px;
+    }
+    .infolist{
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    .iconnavi{
+        font-size: 30px;
+    }
+    
+    .iconsocial{
+        font-size: 20px;
+    }
+
+    .icontop{
+        font-size: 40px;
+    }
+    
+    .navigasi{
+        position: absolute;
+        left: 2%;
+        bottom: 3%;
+        font-size: 13px;
+    }
+
+    .relative{
+        position: relative;
+    }
+}

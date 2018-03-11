@@ -1,0 +1,18 @@
+page-all-reviews {
+    .delete{
+        margin-left: 20px;
+        color: red;
+    }
+    .edit{
+        color: green;
+    }
+    .same{
+        color: blue;
+    }
+    .notSame{
+        color: black;
+    }
+    .date{
+        font-size: 11px;
+    }
+}

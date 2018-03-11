@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="custom">
+    <ion-buttons left>
+      <button ion-button icon-only>
+        <ion-icon name="star"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-capitalize>favorite</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list text-center class="noFav" *ngIf="favWis.length == 0">
+    <ion-icon class="noFavIcon" name="information-circle"></ion-icon>
+    <p>You have no favorite place</p>
+  </ion-list>
+  <div class="margin"></div>
+  <ion-list *ngFor="let wisata of favWis">
+    <ion-item (click)="toDetail(wisata)">
+      <ion-thumbnail item-start>
+        <img src="{{wisata.thumb}}">
+      </ion-thumbnail>
+      <h2 text-uppercase><b>{{wisata.nama}}</b></h2>
+      <p text-wrap text-capitalize>{{wisata.lokasi}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

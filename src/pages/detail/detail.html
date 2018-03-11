@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="custom">
+    <ion-title text-capitalize>{{ nama }}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="favorite()" *ngIf="!cek">
+        <ion-icon name="star-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="removeFavorite()" *ngIf="cek">
+        <ion-icon name="star"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="share()">
+        <ion-icon name="share-alt"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true">
+      <ion-slide *ngFor="let sl of slide">
+        <img src="{{sl}}">
+      </ion-slide>
+  </ion-slides>
+  <!-- <ion-card> -->
+    <h5 text-capitalize padding-left text-center>
+      {{nama}}
+    </h5>
+    <p text-wrap text-center>{{lokasi}}</p>
+    <hr>
+    <ion-list>
+      <button ion-item (click)="toInfo()">
+        <ion-icon name="list-box" item-start></ion-icon>
+        Info Detail
+      </button>
+
+      <button ion-item (click)="toMap()">
+        <ion-icon name="navigate" item-start></ion-icon>
+        Get Direction
+      </button>
+
+      <button ion-item (click)="toWeb()">
+        <ion-icon name="globe" item-start></ion-icon>
+        Website
+      </button>
+
+    </ion-list>
+  <!-- </ion-card> -->
+</ion-content>

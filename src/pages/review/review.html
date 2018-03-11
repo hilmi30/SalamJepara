@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-navbar color="custom">
+    <ion-title text-capitalize>review</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-textarea placeholder="Enter a review" [(ngModel)]="review"></ion-textarea>
+  <button color="custom" ion-button full (click)="showConfirm()">Submit</button>
+</ion-content>

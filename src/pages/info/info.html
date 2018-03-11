@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar color="custom">
+    <ion-title text-capitalize>{{nama}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="getCurrent()">
+        <ion-icon name="locate"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <div id="map"></div>
+  <div padding>
+    <h3 text-capitalize text-center>{{nama}}</h3>
+    <p text-capitalize text-center>{{lokasi}}</p>
+    <hr>
+    <div *ngIf="tahun != 0">
+      <p text-capitalize text-center><b>statistik kunjungan {{nama}} tahun {{tahun}}</b></p>
+      <ion-grid>
+        <ion-row text-center class="meja">
+            <ion-col col-4><b>Lokal</b></ion-col>
+            <ion-col col-4><b>Non Lokal</b></ion-col>
+            <ion-col col-4><b>Jumlah</b></ion-col>
+        </ion-row>
+        <ion-row text-center class="meja">
+          <ion-col col-4>{{wisnus | number}}</ion-col>
+          <ion-col col-4>{{wisman | number}}</ion-col>
+          <ion-col col-4>{{jumlah | number}}</ion-col>
+        </ion-row>
+      </ion-grid>
+      <br>
+    </div>
+    <div class="deskripsi">{{deskripsi}}</div>
+  </div>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar color="custom">
+    <ion-buttons left>
+      <button ion-button icon-only>
+        <ion-icon name="stats"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-capitalize>statistic</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <h3 text-center text-capitalize>data statistik kunjungan wisata alam jepara tahun {{year}}</h3>
+  <table>
+    <tr text-capitalize>
+      <th>nama</th>
+      <th>lokal</th> 
+      <th>non lokal</th>
+      <th>jumlah</th>
+    </tr>
+    <tr text-capitalize *ngFor="let stat of statistik | async">
+      <td>{{stat.nama}}</td>
+      <td text-center>{{stat.wisnus | number}}</td>
+      <td text-center>{{stat.wisman | number}}</td>
+      <td text-center>{{stat.wisman + stat.wisnus | number}}</td>
+    </tr>
+  </table>
+</ion-content>

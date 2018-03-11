@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar color="custom">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toReview()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-capitalize>{{nama}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let rev of reviews | async">
+    <ion-card-header>
+      <b float-left *ngIf="email == rev.email" class="same">{{rev.username}}</b>
+      <b float-left *ngIf="email != rev.email" class="notSame">{{rev.username}}</b>
+      <div *ngIf="email == rev.email">
+        <p float-right class="delete" (click)="showConfirm()">Delete</p>
+        <p float-right class="edit" (click)="toReview()">Edit</p>
+      </div>
+    </ion-card-header>
+    <ion-card-content>
+      <div text-justify>{{rev.review}}</div>
+      <br><hr>
+      <div class="date">Posted on : {{rev.date | date}}</div>
+    </ion-card-content>
+  </ion-card>  
+</ion-content>
